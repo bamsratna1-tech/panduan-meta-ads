@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial FB Ads Pemula - Kelas Eksklusif</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            900: '#1e3a8a',
+                            950: '#172554',
+                        },
+                        accent: {
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #0f172a; /* Slate 900 */
+            color: #f8fafc; /* Slate 50 */
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1e293b; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #3b82f6; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #2563eb; 
+        }
+
+        /* Video Container Aspect Ratio */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            height: 0;
+            overflow: hidden;
+            border-radius: 0.75rem;
+            background-color: #000;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Pulsing Glow Animation */
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 15px rgba(59, 130, 246, 0.5); }
+            50% { box-shadow: 0 0 25px rgba(59, 130, 246, 0.8); }
+        }
+        .btn-glow {
+            animation: glow 2s infinite;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- Sticky Header & Progress Bar -->
+    <header class="fixed top-0 w-full z-50 glass-card border-b border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded bg-gradient-to-br from-brand-500 to-accent-500 flex items-center justify-center font-bold text-white shadow-lg">
+                    MA
+                </div>
+                <span class="font-heading font-bold text-lg tracking-wide">Panduan <span class="text-brand-500">META ADS</span></span>
+            </div>
+            
+            <div class="text-sm font-medium text-slate-300 flex items-center gap-3">
+                <span id="progress-text">0 dari 12 Selesai</span>
+                <div class="w-24 md:w-32 h-2.5 bg-slate-800 rounded-full overflow-hidden border border-slate-700">
+                    <div id="progress-bar" class="h-full bg-gradient-to-r from-accent-500 to-brand-500 w-0 transition-all duration-500 ease-out"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <main class="pt-28 pb-20 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-900/50 border border-brand-500/30 text-brand-400 text-sm font-semibold mb-6">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path></svg>
+                100% Gratis - Panduan Pemula
+            </div>
+            
+            <h1 class="font-heading text-4xl md:text-6xl font-black mb-6 leading-tight">
+                PANDUAN LENGKAP <br/>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-blue-400 to-blue-800">FB & IG ADS</span> UNTUK PEMULA
+            </h1>
+            
+            <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10">
+                Langkah demi langkah cara beriklan di Meta Ads dari nol hingga menghasilkan. Tonton videonya secara berurutan dan praktekkan langsung!
+            </p>
+        </div>
+
+        <!-- Mentor Profile Section -->
+        <div class="max-w-4xl mx-auto mb-12">
+            <div class="glass-card rounded-3xl p-6 md:p-8 relative overflow-hidden group border-l-4 border-l-brand-500">
+                <div class="absolute top-0 right-0 w-48 h-48 bg-brand-500/10 rounded-full blur-3xl transform group-hover:scale-150 transition-transform duration-700"></div>
+                <div class="flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-8 relative z-10">
+                    
+                    <!-- Profile Image / Avatar -->
+                    <div class="w-24 h-24 md:w-32 md:h-32 rounded-full ring-4 ring-slate-700 overflow-hidden flex-shrink-0 bg-slate-800 flex items-center justify-center relative">
+                        <!-- Opsional: Anda bisa mengganti URL di tag img ini dengan foto asli Mas Andrie jika ada -->
+                        <img src="aset/Mas.jpg" alt="Andrie Andropia" class="w-full h-full object-cover"> -->
+                        <svg class="w-16 h-16 text-slate-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                    </div>
+                    
+                    <!-- Profile Info -->
+                    <div class="text-center md:text-left">
+                        <div class="inline-block px-3 py-1 rounded-full bg-brand-500/20 text-brand-400 text-xs font-bold mb-3 tracking-wider uppercase border border-brand-500/30">
+                            Mentor Anda
+                        </div>
+                        <h2 class="font-heading text-2xl md:text-3xl font-bold mb-3">Siapa Mas Andrie Andropia?</h2>
+                        <p class="text-slate-300 leading-relaxed mb-4">
+                            <strong>Andrie Andropia</strong> adalah seorang Praktisi Digital Marketing dan Meta Ads Expert yang telah berpengalaman mengeksekusi <i>budget</i> iklan hingga miliaran rupiah. Ia dikenal di komunitas internet marketer Indonesia karena gaya penyampaiannya yang "daging" (padat & berisi), praktis, dan sangat mudah dipahami oleh pemula.
+                        </p>
+                        <p class="text-slate-400 text-sm md:text-base">
+                                                   </p>
+                    </div>
+                </div>
+
+                <!-- Video Helmy Yahya Bicara -->
+                <div class="relative z-10 mt-8 pt-8 border-t border-slate-700/50">
+                    <div class="text-center mb-6">
+                        <div class="inline-flex px-4 py-1.5 rounded-full bg-red-500/10 text-red-400 text-sm font-bold mb-3 border border-red-500/20 items-center justify-center gap-2">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path></svg>
+                            Telah Diliput Oleh Helmy Yahya
+                        </div>
+                        <h3 class="font-heading text-xl md:text-2xl font-bold text-slate-100">"PNS Ini Hasilkan Milyaran Rupiah Dari Internet"</h3>
+                    </div>
+                    
+                    <div class="video-container ring-4 ring-slate-800 shadow-xl max-w-3xl mx-auto">
+                        <iframe src="https://www.youtube.com/embed/_lnVwkykbQ8?rel=0&modestbranding=1" title="PNS Ini Hasilkan Milyaran Rupiah Dari Internet! | Helmy Yahya Bicara" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Course Modules / Steps Container -->
+        <div class="max-w-4xl mx-auto space-y-8">
+
+            <!-- STEP 1 -->
+            <div class="glass-card rounded-2xl overflow-hidden shadow-2xl relative" id="card-step-1">
+                <div class="absolute top-0 left-0 w-2 h-full bg-brand-500"></div>
+                <div class="p-6 md:p-8">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-4">
+                        <div>
+                            <span class="text-brand-400 font-bold tracking-wider text-sm mb-1 block">LANGKAH 1</span>
+                            <h2 class="text-2xl font-bold font-heading">Apa itu Meta Ads/ Facebook Ads</h2>
+                        </div>
+                        <button id="btn-step-1" onclick="toggleStep(1)" class="px-5 py-2 rounded-lg font-semibold bg-slate-700 hover:bg-slate-600 text-white transition-colors duration-300 w-full md:w-auto flex items-center justify-center gap-2">
+                            Tandai Selesai
+                        </button>
+                    </div>
+                    
+                    <div class="video-container mb-6 ring-4 ring-slate-800">
+                        <!-- ID YouTube: ZW9j4R1vswA -->
+                        <iframe src="https://www.youtube.com/embed/ZW9j4R1vswA?rel=0&modestbranding=1" title="Step 1 Video" allowfullscreen></iframe>
+                    </div>
+                    
+                    <div class="bg-slate-800/50 p-4 rounded-xl border border-slate-700/50">
+                        <h4 class="font-semibold text-accent-500 mb-2 flex items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            Poin Penting:
+                        </h4>
+                        <ul class="list-disc list-inside text-slate-300 space-y-1 text-sm">
+                            <li>Memahami Apa itu Meta Ads.</li>
+                            <li>Mindset yang benar agar tidak boncos (rugi) di awal.</li>
+                        </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP 2 -->
+            <div class="glass-card rounded-2xl overflow-hidden shadow-2xl relative" id="card-step-2">
+                <div class="absolute top-0 left-0 w-2 h-full bg-brand-500"></div>
+                <div class="p-6 md:p-8">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-4">
+                        <div>
+                            <span class="text-brand-400 font-bold tracking-wider text-sm mb-1 block">LANGKAH 2</span>
+                            <h2 class="text-2xl font-bold font-heading">Tahapan Setup Meta Ads</h2>
+                        </div>
+                        <button id="btn-step-2" onclick="toggleStep(2)" class="px-5 py-2 rounded-lg font-semibold bg-slate-700 hover:bg-slate-600 text-white transition-colors duration-300 w-full md:w-auto flex items-center justify-center gap-2">
+                            Tandai Selesai
+                        </button>
+                    </div>
+                    
+                    <div class="video-container mb-6 ring-4 ring-slate-800">
+                        <!-- ID YouTube: FQIgPptzhE0 -->
+                        <iframe src="https://www.youtube.com/embed/FQIgPptzhE0?rel=0&modestbranding=1" title="Step 2 Video" allowfullscreen></iframe>
+                    </div>
+                    
+                    <div class="bg-slate-800/50 p-4 rounded-xl border border-slate-700/50">
+                        <h4 class="font-semibold text-accent-500 mb-2 flex items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            Poin Penting:
+                        </h4>
+                        <ul class="list-disc list-inside text-slate-300 space-y-1 text-sm">
+                            <li>Tahapan persiapan beriklan di Facebook.</li>
+                            <li>Langkah-langkah setup akun iklan yang benar.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP 3 -->
+            <div class="glass-card rounded-2xl overflow-hidden shadow-2xl relative" id="card-step-3">
+                <div class="absolute top-0 left-0 w-2 h-full bg-brand-500"></div>
+                <div class="p-6 md:p-8">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-4">
+                        <div>
+                            <span class="text-brand-400 font-bold tracking-wider text-sm mb-1 block">LANGKAH 3</span>
+                            <h2 class="text-2xl font-bold font-heading">Cara Membuat Akun Bisnis</h2>
+                        </div>
+                        <button id="btn-step-3" onclick="toggleStep(3)" class="px-5 py-2 rounded-lg font-semibold bg-slate-700 hover:bg-slate-600 text-white transition-colors duration-300 w-full md:w-auto flex items-center justify-center gap-2">
+                            Tandai Selesai
+                        </button>
+                    </div>
+                    
+                    <div class="video-container mb-6 ring-4 ring-slate-800">
+                        <!-- ID YouTube: y1CdmOzQNjI -->
+                        <iframe src="https://www.youtube.com/embed/y1CdmOzQNjI?rel=0&modestbranding=1" title="Step 3 Video" allowfullscreen></iframe>
+                    </div>
+                    
+                    <div class="bg-slate-800/50 p-4 rounded-xl border border-slate-700/50">
+                        <h4 class="font-semibold text-accent-500 mb-2 flex items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            Poin Penting:
+                        </h4>
+                        <ul class="list-disc list-inside text-slate-300 space-y-1 text-sm">
+                            <li>Cara membuat akun bisnis di Facebook.</li>
+                            <li>Aturan utama membuat akun bisnis.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP 4 -->
+            <div class="glass-card rounded-2xl overflow-hidden shadow-2xl relative" id="card-step-4">
+                <div class="absolute top-0 left-0 w-2 h-full bg-brand-500"></div>
+                <div class="p-6 md:p-8">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-4">
+                        <div>
+                            <span class="text-brand-400 font-bold tracking-wider text-sm mb-1 block">LANGKAH 4</span>
+                            <h2 class="text-2xl font-bold font-heading">Cara Membuat Akun Iklan</h2>
+                        </div>
+                        <button id="btn-step-4" onclick="toggleStep(4)" class="px-5 py-2 rounded-lg font-semibold bg-slate-700 hover:bg-slate-600 text-white transition-colors duration-300 w-full md:w-auto flex items-center justify-center gap-2">
+                            Tandai Selesai
+                        </button>
+                    </div>
+                    
+                    <div class="video-container mb-6 ring-4 ring-slate-800">
+                        <!-- ID YouTube: 8bxzbxdp4-k -->
+                        <iframe src="https://www.youtube.com/embed/8bxzbxdp4-k?rel=0&modestbranding=1" title="Step 4 Video" allowfullscreen></iframe>
+                    </div>
+                    
+                    <div class="bg-slate-800/50 p-4 rounded-xl border border-slate-700/50">
+                        <h4 class="font-semibold text-accent-500 mb-2 flex items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            Poin Penting:
+                        </h4>
+                        <ul class="list-disc list-inside text-slate-300 space-y-1 text-sm">
+                            <li>Cara membuat akun iklan di Facebook.</li>
+                            <li>Point penting dalam membuat akun iklan.</li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP 5 -->
+            <div class="glass-card rounded-2xl overflow-hidden shadow-2xl relative" id="card-step-5">
+                <div class="absolute top-0 left-0 w-2 h-full bg-brand-500"></div>
+                <div class="p-6 md:p-8">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-4">
+                        <div>
+                            <span class="text-brand-400 font-bold tracking-wider text-sm mb-1 block">LANGKAH 5</span>
+                            <h2 class="text-2xl font-bold font-heading">Cara Menambahkan Metode Pembayaran</h2>
+                        </div>
+                        <button id="btn-step-5" onclick="toggleStep(5)" class="px-5 py-2 rounded-lg font-semibold bg-slate-700 hover:bg-slate-600 text-white transition-colors duration-300 w-full md:w-auto flex items-center justify-center gap-2">
+                            Tandai Selesai
+                        </button>
+                    </div>
+                    
+                    <div class="video-container mb-6 ring-4 ring-slate-800">
+                        <!-- ID YouTube: 9_H0mkJKfWc -->
+                        <iframe src="https://www.youtube.com/embed/9_H0mkJKfWc?rel=0&modestbranding=1" title="Step 5 Video" allowfullscreen></iframe>
+                    </div>
+                    
+                    <div class="bg-slate-800/50 p-4 rounded-xl border border-slate-700/50">
+                        <h4 class="font-semibold text-accent-500 mb-2 flex items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            Poin Penting:
+                        </h4>
+                        <ul class="list-disc list-inside text-slate-300 space-y-1 text-sm">
+                            <li>Cara menambahkan metode pembayaran di akun iklan.</li>
+                            <li>Langkah-langkah untuk memverifikasi akun pembayaran.</li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP 6 -->
+            <div class="glass-card rounded-2xl overflow-hidden shadow-2xl relative" id="card-step-6">
+                <div class="absolute top-0 left-0 w-2 h-full bg-brand-500"></div>
+                <div class="p-6 md:p-8">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-4">
+                        <div>
+                            <span class="text-brand-400 font-bold tracking-wider text-sm mb-1 block">LANGKAH 6</span>
+                            <h2 class="text-2xl font-bold font-heading">Cara Membuat Fanspage</h2>
+                        </div>
+                        <button id="btn-step-6" onclick="toggleStep(6)" class="px-5 py-2 rounded-lg font-semibold bg-slate-700 hover:bg-slate-600 text-white transition-colors duration-300 w-full md:w-auto flex items-center justify-center gap-2">
+                            Tandai Selesai
+                        </button>
+                    </div>
+                    
+                    <div class="video-container mb-6 ring-4 ring-slate-800">
+                        <!-- Ganti: "v=AN2Gc0kpsG0" dengan ID YouTube Anda -->
+                        <iframe src="https://www.youtube.com/embed/AN2Gc0kpsG0?rel=0&modestbranding=1" title="Step 6 Video" allowfullscreen></iframe>
+                    </div>
+                    
+                    <div class="bg-slate-800/50 p-4 rounded-xl border border-slate-700/50">
+                        <h4 class="font-semibold text-accent-500 mb-2 flex items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            Poin Penting:
+                        </h4>
+                        <ul class="list-disc list-inside text-slate-300 space-y-1 text-sm">
+                            <li>tutorial membuat fanspage.</li>
+                            <li>Langkah-langkah untuk membuat fanspage yang efektif.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP 7 -->
+            <div class="glass-card rounded-2xl overflow-hidden shadow-2xl relative" id="card-step-7">
+                <div class="absolute top-0 left-0 w-2 h-full bg-brand-500"></div>
+                <div class="p-6 md:p-8">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-4">
+                        <div>
+                            <span class="text-brand-400 font-bold tracking-wider text-sm mb-1 block">LANGKAH 7</span>
+                            <h2 class="text-2xl font-bold font-heading">Custom Audience & Lookalike Audience</h2>
+                        </div>
+                        <button id="btn-step-7" onclick="toggleStep(7)" class="px-5 py-2 rounded-lg font-semibold bg-slate-700 hover:bg-slate-600 text-white transition-colors duration-300 w-full md:w-auto flex items-center justify-center gap-2">
+                            Tandai Selesai
+                        </button>
+                    </div>
+                    
+                    <div class="video-container mb-6 ring-4 ring-slate-800">
+                        <iframe src="https://www.youtube.com/embed/Usz7hew56p4?rel=0&modestbranding=1" title="Step 7 Video" allowfullscreen></iframe>
+                    </div>
+                    
+                    <div class="bg-slate-800/50 p-4 rounded-xl border border-slate-700/50">
+                        <h4 class="font-semibold text-accent-500 mb-2 flex items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            Poin Penting:
+                        </h4>
+                        <ul class="list-disc list-inside text-slate-300 space-y-1 text-sm">
+                            <li>Siapkan tempat untuk menaruh video/materi Anda di sini.</li>
+                            <li>Ganti ID YouTube pada link iframe.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP 8 -->
+            <div class="glass-card rounded-2xl overflow-hidden shadow-2xl relative" id="card-step-8">
+                <div class="absolute top-0 left-0 w-2 h-full bg-brand-500"></div>
+                <div class="p-6 md:p-8">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-4">
+                        <div>
+                            <span class="text-brand-400 font-bold tracking-wider text-sm mb-1 block">LANGKAH 8</span>
+                            <h2 class="text-2xl font-bold font-heading">Setup Facebook Pixel & Custom Audience</h2>
+                        </div>
+                        <button id="btn-step-8" onclick="toggleStep(8)" class="px-5 py-2 rounded-lg font-semibold bg-slate-700 hover:bg-slate-600 text-white transition-colors duration-300 w-full md:w-auto flex items-center justify-center gap-2">
+                            Tandai Selesai
+                        </button>
+                    </div>
+                    
+                    <div class="video-container mb-6 ring-4 ring-slate-800">
+                        <iframe src="https://www.youtube.com/embed/gkI-igGUf18?rel=0&modestbranding=1" title="Step 8 Video" allowfullscreen></iframe>
+                    </div>
+                    
+                    <div class="bg-slate-800/50 p-4 rounded-xl border border-slate-700/50">
+                        <h4 class="font-semibold text-accent-500 mb-2 flex items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            Poin Penting:
+                        </h4>
+                        <ul class="list-disc list-inside text-slate-300 space-y-1 text-sm">
+                            <li>Menyiapkan Facebook Pixel dan Custom Audience.</li>
+                            <li.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP 9 -->
+            <div class="glass-card rounded-2xl overflow-hidden shadow-2xl relative" id="card-step-9">
+                <div class="absolute top-0 left-0 w-2 h-full bg-brand-500"></div>
+                <div class="p-6 md:p-8">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-4">
+                        <div>
+                            <span class="text-brand-400 font-bold tracking-wider text-sm mb-1 block">LANGKAH 9</span>
+                            <h2 class="text-2xl font-bold font-heading">Penjelasan Campaign di Facebook</h2>
+                        </div>
+                        <button id="btn-step-9" onclick="toggleStep(9)" class="px-5 py-2 rounded-lg font-semibold bg-slate-700 hover:bg-slate-600 text-white transition-colors duration-300 w-full md:w-auto flex items-center justify-center gap-2">
+                            Tandai Selesai
+                        </button>
+                    </div>
+                    
+                    <div class="video-container mb-6 ring-4 ring-slate-800">
+                        <iframe src="https://www.youtube.com/embed/9ObBOAqbUjA?rel=0&modestbranding=1" title="Step 9 Video" allowfullscreen></iframe>
+                    </div>
+                    
+                    <div class="bg-slate-800/50 p-4 rounded-xl border border-slate-700/50">
+                        <h4 class="font-semibold text-accent-500 mb-2 flex items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            Poin Penting:
+                        </h4>
+                        <ul class="list-disc list-inside text-slate-300 space-y-1 text-sm">
+                            <li>Kalian akan belajar jenis-jenis campaign di Facebook.</li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP 10 -->
+            <div class="glass-card rounded-2xl overflow-hidden shadow-2xl relative" id="card-step-10">
+                <div class="absolute top-0 left-0 w-2 h-full bg-brand-500"></div>
+                <div class="p-6 md:p-8">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-4">
+                        <div>
+                            <span class="text-brand-400 font-bold tracking-wider text-sm mb-1 block">LANGKAH 10</span>
+                            <h2 class="text-2xl font-bold font-heading">Penjelasan Tentang Adset</h2>
+                        </div>
+                        <button id="btn-step-10" onclick="toggleStep(10)" class="px-5 py-2 rounded-lg font-semibold bg-slate-700 hover:bg-slate-600 text-white transition-colors duration-300 w-full md:w-auto flex items-center justify-center gap-2">
+                            Tandai Selesai
+                        </button>
+                    </div>
+                    
+                    <div class="video-container mb-6 ring-4 ring-slate-800">
+                        <iframe src="https://www.youtube.com/embed/g3sBRfBrahk?start=13&rel=0&modestbranding=1" title="Step 10 Video" allowfullscreen></iframe>
+                    </div>
+                    
+                    <div class="bg-slate-800/50 p-4 rounded-xl border border-slate-700/50">
+                        <h4 class="font-semibold text-accent-500 mb-2 flex items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            Poin Penting:
+                        </h4>
+                        <ul class="list-disc list-inside text-slate-300 space-y-1 text-sm">
+                            <li>Memahami tentang Adset di Facebook Ads.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP 11 -->
+            <div class="glass-card rounded-2xl overflow-hidden shadow-2xl relative" id="card-step-11">
+                <div class="absolute top-0 left-0 w-2 h-full bg-brand-500"></div>
+                <div class="p-6 md:p-8">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-4">
+                        <div>
+                            <span class="text-brand-400 font-bold tracking-wider text-sm mb-1 block">LANGKAH 11</span>
+                            <h2 class="text-2xl font-bold font-heading">Penjelasan Level Ads</h2>
+                        </div>
+                        <button id="btn-step-11" onclick="toggleStep(11)" class="px-5 py-2 rounded-lg font-semibold bg-slate-700 hover:bg-slate-600 text-white transition-colors duration-300 w-full md:w-auto flex items-center justify-center gap-2">
+                            Tandai Selesai
+                        </button>
+                    </div>
+                    
+                    <div class="video-container mb-6 ring-4 ring-slate-800">
+                        <iframe src="https://www.youtube.com/embed/m41YSpWFUMU?rel=0&modestbranding=1" title="Step 11 Video" allowfullscreen></iframe>
+                    </div>
+                    
+                    <div class="bg-slate-800/50 p-4 rounded-xl border border-slate-700/50">
+                        <h4 class="font-semibold text-accent-500 mb-2 flex items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            Poin Penting:
+                        </h4>
+                        <ul class="list-disc list-inside text-slate-300 space-y-1 text-sm">
+                            <li>Memahami tentang level iklan di Facebook Ads.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP 12 -->
+            <div class="glass-card rounded-2xl overflow-hidden shadow-2xl relative" id="card-step-12">
+                <div class="absolute top-0 left-0 w-2 h-full bg-brand-500"></div>
+                <div class="p-6 md:p-8">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-4">
+                        <div>
+                            <span class="text-brand-400 font-bold tracking-wider text-sm mb-1 block">LANGKAH 12</span>
+                            <h2 class="text-2xl font-bold font-heading">Siap Jalankan Iklan Pertama Anda</h2>
+                        </div>
+                        <button id="btn-step-12" onclick="toggleStep(12)" class="px-5 py-2 rounded-lg font-semibold bg-slate-700 hover:bg-slate-600 text-white transition-colors duration-300 w-full md:w-auto flex items-center justify-center gap-2">
+                            Tandai Selesai
+                        </button>
+                    </div>
+                    
+                    <div class="video-container mb-6 ring-4 ring-slate-800">
+                        <iframe src="https://www.youtube.com/embed/RHvq6HnwusM?rel=0&modestbranding=1" title="Step 12 Video" allowfullscreen></iframe>
+                    </div>
+                    
+                    <div class="bg-slate-800/50 p-4 rounded-xl border border-slate-700/50">
+                        <h4 class="font-semibold text-accent-500 mb-2 flex items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            Poin Penting:
+                        </h4>
+                        <ul class="list-disc list-inside text-slate-300 space-y-1 text-sm">
+                            <li>Langkah-langkah untuk menjalankan iklan pertama Anda di Facebook Ads.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call To Action Section -->
+            <div class="mt-16 text-center bg-gradient-to-br from-brand-900 to-slate-900 border border-brand-500/30 rounded-3xl p-8 md:p-12 shadow-2xl relative overflow-hidden">
+                <div class="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 bg-brand-500 rounded-full blur-3xl opacity-20 pointer-events-none"></div>
+                <div class="absolute bottom-0 left-0 -ml-16 -mb-16 w-64 h-64 bg-accent-500 rounded-full blur-3xl opacity-10 pointer-events-none"></div>
+                
+                <h3 class="font-heading text-3xl md:text-4xl font-bold mb-4">Ingin Dibimbing Lebih Intensif dan Gratis Tiap Minggu?</h3>
+                <p class="text-slate-300 mb-8 max-w-xl mx-auto text-lg">
+                    Dapatkan mentoring khusus, materi advanced, dan Peluang Cuan, serta akses grup tanya jawab langsung bersama praktisi ahli Andrie Andropia yang sudah berpengalaman selama 10+ tahun  di marketing digital.
+                </p>
+                
+                <a href="https://akses.zoomdaging.co/aff/159/2370/" class="btn-glow inline-block bg-gradient-to-r from-accent-500 to-accent-600 hover:from-accent-400 hover:to-accent-500 text-white font-bold text-lg px-8 py-4 rounded-full shadow-xl transform transition hover:-translate-y-1">
+                    🚀 GABUNG ZOOM MENTORING GRATIS TIAP PEKAN DISINI
+                </a>
+                <p class="mt-4 text-xs text-slate-500">Kuota Terbatas, segera daftar sebelum kuota penuh.</p>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="border-t border-slate-800 bg-slate-900 py-8 text-center text-slate-500 text-sm">
+        <div class="max-w-4xl mx-auto px-4">
+            <p>&copy; 2026 Digital Marketing. All Right Reserved.</p>
+            <p class="mt-2"
+        </div>
+    </footer>
+
+    <!-- Logic & Interactivity -->
+    <script>
+        // Progress Tracking Logic
+        const totalSteps = 12;
+        let completedSteps = JSON.parse(localStorage.getItem('fbAdsProgress')) || [];
+
+        // Check icon SVG
+        const checkIcon = `<svg class="w-5 h-5 inline-block mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>`;
+
+        function updateUI() {
+            // Update Progress Bar
+            const percent = (completedSteps.length / totalSteps) * 100;
+            document.getElementById('progress-bar').style.width = `${percent}%`;
+            document.getElementById('progress-text').innerText = `${completedSteps.length} dari ${totalSteps} Selesai`;
+
+            // Update Buttons
+            for (let i = 1; i <= totalSteps; i++) {
+                const btn = document.getElementById(`btn-step-${i}`);
+                const card = document.getElementById(`card-step-${i}`);
+                
+                if (completedSteps.includes(i)) {
+                    btn.innerHTML = `${checkIcon} Selesai Dipelajari`;
+                    btn.classList.remove('bg-slate-700', 'hover:bg-slate-600');
+                    btn.classList.add('bg-emerald-600', 'hover:bg-emerald-500', 'text-white');
+                    // Add subtle green border to completed cards
+                    card.classList.add('border', 'border-emerald-500/30');
+                } else {
+                    btn.innerHTML = `Tandai Selesai`;
+                    btn.classList.remove('bg-emerald-600', 'hover:bg-emerald-500', 'text-white');
+                    btn.classList.add('bg-slate-700', 'hover:bg-slate-600');
+                    card.classList.remove('border', 'border-emerald-500/30');
+                }
+            }
+        }
+
+        function toggleStep(stepId) {
+            if (completedSteps.includes(stepId)) {
+                completedSteps = completedSteps.filter(id => id !== stepId);
+            } else {
+                completedSteps.push(stepId);
+            }
+            
+            // Save to LocalStorage
+            localStorage.setItem('fbAdsProgress', JSON.stringify(completedSteps));
+            
+            // Update the UI immediately
+            updateUI();
+            
+            // Show custom notification (replacing alert)
+            if (completedSteps.includes(stepId)) {
+                showNotification(`🎉 Mantap! Langkah ${stepId} selesai.`);
+            }
+        }
+
+        function showNotification(message) {
+            // Remove existing notification if any
+            const existing = document.getElementById('custom-toast');
+            if (existing) existing.remove();
+
+            // Create notification element
+            const toast = document.createElement('div');
+            toast.id = 'custom-toast';
+            toast.className = 'fixed bottom-5 right-5 bg-slate-800 text-white px-6 py-3 rounded-xl shadow-2xl border border-slate-700 transform translate-y-20 opacity-0 transition-all duration-300 z-50 flex items-center gap-3';
+            toast.innerHTML = message;
+            
+            document.body.appendChild(toast);
+
+            // Animate in
+            setTimeout(() => {
+                toast.classList.remove('translate-y-20', 'opacity-0');
+            }, 10);
+
+            // Animate out after 3 seconds
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+                setTimeout(() => {
+                    toast.remove();
+                }, 300);
+            }, 3000);
+        }
+
+        // Initialize UI on load
+        window.onload = function() {
+            updateUI();
+        };
+    </script>
+</body>
+</html>
